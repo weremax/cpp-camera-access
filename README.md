@@ -2,6 +2,11 @@
 ```
 g++ main.cpp -o vision_test $(pkg-config --cflags opencv4) $(pkg-config --libs opencv4)
 ```
+or
+```
+g++ main.cpp -o vision_test2 $(pkg-config --cflags --libs opencv4)
+```
+
 However, on arch linux I needed to create the following: CMakeLists.txt
  - File name too long error after fixing the library issues.
 ```
@@ -14,4 +19,10 @@ target_link_libraries(main ${OpenCV_LIBS})
 Run the following:
 ```
 mkdir build && cd build && cmake .. && make
+```
+
+Install opencv for C++ on some systems
+```
+sudo apt install build-essential libopencv-dev
+pkg-config --modversion opencv4
 ```
