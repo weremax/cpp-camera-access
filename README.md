@@ -4,7 +4,7 @@ g++ main.cpp -o vision_test $(pkg-config --cflags opencv4) $(pkg-config --libs o
 ```
 or
 ```
-g++ main.cpp -o vision_test2 $(pkg-config --cflags --libs opencv4)
+g++ main.cpp -o vision_test $(pkg-config --cflags --libs opencv4)
 ```
 
 However, on arch linux I needed to create the following: CMakeLists.txt
