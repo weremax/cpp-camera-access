@@ -2,6 +2,7 @@
     #include <iostream>
 
     int main() {
+        #define FLIP_CAMERA "off"
         // Open the default camera (usually index 0)
         cv::VideoCapture cap(0);
 
@@ -24,13 +25,16 @@
             
             // Display the frame in a window named "Camera Feed"
             // -- this shows a camera in a mirrored fashion directly from the frame
-            // cv::imshow("Camera Feed Mirrored", frame);
+            if (FLIP_CAMERA == "off") {
+              cv::imshow("Camera Feed Mirrored", frame);
+            }
 
             // Flip the frame horizontally to un-mirror it like it does above
-            cv::Mat normal_view_frame;
-            cv::flip(frame, normal_view_frame, 1);
-            cv::imshow("Camera Feed Unmirrored", normal_view_frame);
-            
+            if (FLIP_CAMERA == "on") {
+              cv::Mat normal_view_frame;
+              cv::flip(frame, normal_view_frame, 1);
+              cv::imshow("Camera Feed Unmirrored", normal_view_frame);
+            }
 
             // Wait for 30 milliseconds and check for key press
             // 'q' key to exit the loop
