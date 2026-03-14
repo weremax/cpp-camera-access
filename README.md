@@ -26,3 +26,7 @@ Install opencv for C++ on some systems
 sudo apt install build-essential libopencv-dev
 pkg-config --modversion opencv4
 ```
+Install opencv for C++ on Fedora
+```
+sudo dnf install opencv opencv-devel
+```
