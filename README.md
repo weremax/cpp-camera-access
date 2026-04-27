@@ -30,3 +30,9 @@ Install opencv for C++ on Fedora
 ```
 sudo dnf install opencv opencv-devel
 ```
+
+Install opencv on OpenMandriva
+```
+sudo dnf install glibc-devel opencv-devel gcc-c++
+```
+
